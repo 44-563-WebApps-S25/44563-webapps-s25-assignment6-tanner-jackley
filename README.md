@@ -2,3 +2,7 @@
 # WebApps-S25-Assignment-6
 Introduction to Java Script and DOM
 
+Hosted at:
+- city: https://44-563-webapps-s25.github.io/44563-webapps-s25-assignment6-tanner-jackley/city
+- discount: https://44-563-webapps-s25.github.io/44563-webapps-s25-assignment6-tanner-jackley/message
+- dinner: https://44-563-webapps-s25.github.io/44563-webapps-s25-assignment6-tanner-jackley/dinner
