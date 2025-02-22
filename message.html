@@ -51,5 +51,41 @@ function amounts(){
 }
 </script>
 
+<form>
+    <input type="radio" id="rg1_pro" onclick="chooseOp()" name="op" value="times">
+    <label for="rg1_pro">product</label><br>
+    
+    <input type="radio" id="rg1_sum" onclick="chooseOp()" name="op" value="add">
+    <label for="rg1_sum">sum</label><br>
+    
+    <input type="radio" id="rg1_mod" onclick="chooseOp()" name="op" value="mod">
+    <label for="rg1_mod">mod</label><br>
+</form>
+
+<p id="calculation">Result </p>
+
+<script>
+    function chooseOp(){
+        var basicPrice = parseFloat(document.getElementById("basicprice").value);
+        var breakAt = parseInt(document.getElementById("breakAt").value);
+        var operation = document.querySelector(`input[name="op"]:checked`).value;
+
+        var result;
+        switch (operation) {
+            case "times":
+                result = basicPrice * breakAt;
+                break;
+            case "add":
+                result = basicPrice + breakAt;
+                break;
+            case "mod":
+                result = basicPrice % breakAt;
+                break;
+        }
+        
+        document.getElementById("calculation").innerHTML = `${basicPrice} ${operation} ${breakAt} is ${result}`;
+    }
+</script>
+
 </body>
 </html> 
