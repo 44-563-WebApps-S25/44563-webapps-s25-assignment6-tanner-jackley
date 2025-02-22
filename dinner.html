@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planning Dinner</title>
+</head>
+<body>
+<h1>Tanner Jackley plans dinner</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="wine">Serve wine</label>
+    <input type="checkbox" id="wine" name="options" value="True"><br>
+
+    <label for="outside">Eat outside</label>
+    <input type="checkbox" id="outside" name="options" value="True"><br>
+
+    <label for="candles">Light candles</label>
+    <input type="checkbox" id="candles" name="options" value="False"><br>
+
+    <input type="button" value="Dinner Choices" onclick="choices()">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+var my_dinner = {};
+
+function choices(){
+    my_dinner = {};
+    my_dinner.wine = document.getElementById("wine").checked;
+        my_dinner.outside = document.getElementById("outside").checked;
+        my_dinner.candles = document.getElementById("candles").checked;
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_dinner, null, 2);
+}
+</script>
+
+</body>
+</html> 
