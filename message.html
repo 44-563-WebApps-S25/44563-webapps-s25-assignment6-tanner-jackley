@@ -40,7 +40,7 @@ function amounts(){
             totalCost = basicPrice * size;
         } 
         else {
-            totalCost = size * basicPrice * (1 - discount / 100);
+            totalCost = (size * basicPrice) - ((basicPrice * (discount/100)) * (size - breakAt + 1)); 
 
         }
 
