@@ -19,6 +19,16 @@
 
     <input type="button" value="Dinner Choices" onclick="choices()">
 </form>
+<br>
+<form>
+    <label for="main">Enter main dish</label>
+    <input type ="text" id="main" name="main" value="Butter Chicken"> <br>
+
+    <label for="dessert">Enter dessert</label>
+    <input type ="text" id="dessert" name="dessert"> <br>
+
+    <input type="button" onclick="updateDinner()" value="Update the dinner">
+</form>
 
 
 <p id="result"></p>
@@ -28,9 +38,16 @@ var my_dinner = {};
 
 function choices(){
     my_dinner = {};
-    my_dinner.wine = document.getElementById("wine").checked;
-        my_dinner.outside = document.getElementById("outside").checked;
-        my_dinner.candles = document.getElementById("candles").checked;
+    my_dinner["wine"] = document.getElementById("wine").checked;
+    my_dinner["outside"] = document.getElementById("outside").checked;
+    my_dinner["candles"] = document.getElementById("candles").checked;
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_dinner, null, 2);
+}
+
+function updateDinner(){
+    my_dinner["main"] = document.getElementById("main").value;
+    my_dinner["dessert"] = document.getElementById("dessert").value;
 
     document.getElementById("result").innerHTML = JSON.stringify(my_dinner, null, 2);
 }
