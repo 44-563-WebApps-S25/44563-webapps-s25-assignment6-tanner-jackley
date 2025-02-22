@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Cost</title>
+</head>
+<body>
+
+<h1>Tanner Jackley message cost</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="basicprice">Enter cost per letter </label>
+    <input type ="number" id="basicprice" name="basicprice"> <br>
+
+    <label for="breakAt">Enter the length needed for the discount </label>
+    <input type ="number" id="breakAt" name="breakAt" value="9"> <br>
+
+    <label for="discount">Enter the discount percent </label>
+    <input type ="number" id="discount" name="discount" value="10"> <br>
+
+    <input type="button" onclick="amounts()" value="Show total">
+</form>
+
+
+<p id="result">Result </p>
+
+<script> 
+
+function amounts(){
+    var basicPrice = parseFloat(document.getElementById("basicprice").value);
+    var breakAt = parseInt(document.getElementById("breakAt").value);
+    var discount = parseFloat(document.getElementById("discount").value);
+    
+    let myResults = "";
+    
+    for (let size = breakAt - 3; size <= breakAt + 3; size++){
+        let totalCost = 0;
+
+        if (size < breakAt){
+            totalCost = basicPrice * size;
+        } 
+        else {
+            totalCost = size * basicPrice * (1 - discount / 100);
+
+        }
+
+        myResults += `size ${size} is ${totalCost.toFixed(1)}; `;
+    }
+
+    document.getElementById("result").innerHTML = "Totals are: " + myResults;
+}
+</script>
+
+</body>
+</html> 
