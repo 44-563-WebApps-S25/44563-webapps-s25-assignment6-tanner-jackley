@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess That City</title>
+</head>
+<body>
+<h1>City game by Tanner Jackley</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_hidden">Where in the world </label>
+    <input type ="password" id="form1_hidden" name="form1_hidden" value="San Diego"> <br>
+
+    <label for="form1_check">Guess the city </label>
+    <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
+
+    <input type="button" onclick="checkCity()" value="Check the guess">
+</form>
+
+
+<p id="result">Guess Results </p>
+
+<script> 
+var found = 0;
+var oops = 0;
+
+function checkCity (){
+    hidden = document.getElementById("form1_hidden").value
+    check = document.getElementById("form1_check").value
+    
+    if(hidden === check){
+        found ++;
+        alert("GotCha")
+    } else {
+        oops ++;
+        alert("Awe")
+    }
+
+    out = document.getElementById("result")
+    out.innerHTML = "Guess Results:<br>Found: " + found + "<br>Oops: " + oops
+}
+</script>
+
+</body>
+</html> 
