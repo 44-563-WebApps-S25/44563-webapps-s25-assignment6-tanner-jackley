@@ -25,7 +25,7 @@
 var found = 0;
 var oops = 0;
 
-function checkCity (){
+function checkCity(){
     hidden = document.getElementById("form1_hidden").value
     check = document.getElementById("form1_check").value
     
@@ -40,6 +40,32 @@ function checkCity (){
     out = document.getElementById("result")
     out.innerHTML = "Guess Results:<br>Found: " + found + "<br>Oops: " + oops
 }
+</script>
+
+<div>
+    <img src="jack.jpg" alt="Pets" onclick="updatePic()" id="pet" width="150" height="150">
+</div>
+
+<script>
+    var usePic = 1
+    
+    function updatePic(){
+        img = document.getElementById("pet")
+        switch (usePic) {
+            case 1:
+                img.src = "jack.jpg";
+                usePic = 2
+                break;
+            case 2:
+                img.src = "leopard.jpg";
+                usePic = 3
+                break;
+            case 3:
+                img.src = "axolotl.jpg";
+                usePic = 1
+                break;
+        }
+    }
 </script>
 
 </body>
